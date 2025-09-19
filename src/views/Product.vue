@@ -3,10 +3,11 @@
     <h2 class="mb-3">แสดงข้อมูลสินค้า</h2>
     
     <div class="mb-3">
-      <a class="btn btn-primary" href="/addcustomer" role="button">Add+</a>
+      <a class="btn btn-primary" href="/addproduct" role="button">Add+</a>
     </div>
 
     <!-- ตารางแสดงข้อมูลลูกค้า -->
+     
     <table class="table table-bordered table-striped">
       <thead class="table-success">
         <tr>
@@ -25,7 +26,18 @@
           <td>{{ product.description}}</td>
           <td>{{ product.price }}</td>
           <td>{{ product.stock }}</td>
-          <td>{{ product.image }}</td>
+          <td> <img
+            :src="'http://localhost/project-67700660_vue/api_php/uploads/' + product.image"
+            width="150%"
+            height="150"
+            class="card-img-top"
+            :alt="product.name"
+          >
+
+
+
+
+          </td>
         </tr>
       </tbody>
     </table>
