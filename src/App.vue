@@ -20,6 +20,9 @@
           <a class="nav-link" href="/customer">Customer</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/student">Student</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item dropdown">

@@ -15,6 +15,7 @@
           <th>นามสกุล</th>
           <th>เบอร์โทร</th>
           <th>ชื่อผู้ใช้</th>
+          <th>ลบข้อมูล</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +25,11 @@
           <td>{{ customer.lastName }}</td>
           <td>{{ customer.phone }}</td>
           <td>{{ customer.username }}</td>
+
+        <!--เพิ่มปุ่มลบ -->
+      <td>  
+  <button class="btn btn-danger btn-sm" @click="deleteCustomer(customer.customer_id)">ลบ</button>
+</td>
         </tr>
       </tbody>
     </table>
@@ -81,9 +87,38 @@ export default {
       fetchCustomers();
     });
 
+    //ฟังก์ชั่นการลบข้อมูล ***
+const deleteCustomer = async (id) => {
+  if (!confirm("คุณต้องการลบข้อมูลนี้ใช่หรือไม่?")) return;
+
+  try {
+    const response = await fetch("http://localhost/project-67700660_vue/api_php/api_customer.php", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ customer_id: id })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      // ลบออกจาก customers ทันที (ไม่ต้องโหลดใหม่)
+      customers.value = customers.value.filter(c => c.customer_id !== id);
+      alert(result.message);
+    } else {
+      alert(result.message);
+    }
+
+  } catch (err) {
+    alert("เกิดข้อผิดพลาด: " + err.message);
+  }
+};
+
     return {
       customers,
       loading,
+      deleteCustomer,
       error
     };
   }
