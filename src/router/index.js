@@ -49,6 +49,31 @@ const routes = [
     name: 'addstudent',
     component: () => import('../views/add_student.vue')
   },
+  {
+    path: '/pro_edit',
+    name: 'pro_edit',
+    component: () => import('../views/product_edit.vue')
+  },
+  {
+    path: '/edit_ct',
+    name: '/edit_ct',
+    component: () => import('../views/Edit_customer.vue')
+  },
+  {
+    path: '/emp',
+    name: '/emp',
+    component: () => import('../views/employee.vue')
+  },
+  {
+    path: '/ed_emp',
+    name: '/ed_emp',
+    component: () => import('../views/Edit_employee.vue')
+  },
+  {
+    path: '/addemp',
+    name: '/addemp',
+    component: () => import('../views/add_employee.vue')
+  },
 ]
 
 const router = createRouter({

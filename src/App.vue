@@ -13,12 +13,38 @@
         <li class="nav-item">
           <a class="nav-link" href="/showproduct">Show product</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/product">Product</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Product
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/product">Product</a></li>
+            <li><a class="dropdown-item" href="/pro_edit">Product_edit</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/customer">Customer</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Customer
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/customer">Customer</a></li>
+            <li><a class="dropdown-item" href="/edit_ct">Edit_customer</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Employee
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/emp">Employee</a></li>
+            <li><a class="dropdown-item" href="/edit_ct">Edit_customer</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </li>
+        
+        
         <li class="nav-item">
           <a class="nav-link" href="/student">Student</a>
         </li>
